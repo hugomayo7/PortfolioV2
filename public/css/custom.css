@@ -1,0 +1,52 @@
+.top_image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.main_details {
+    display: flex;
+}
+
+.textbox {
+    width: 70%;
+    padding-left: 100px !important;
+    padding: 40px;
+}
+
+.detailbox {
+    width: 30%;
+    padding: 40px;
+}
+
+.detailbox ul {
+    list-style: none;
+    margin: 0px;
+}
+
+.detailbox > ul > li {
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    float: left;
+}
+
+.detailbox .first {
+    font-weight: 700;
+    display: block;
+}
+
+.portfolio_main_title {
+    padding: 0 40px;
+    padding-left: 100px !important;
+}
+
+.gallery_zoom .item {
+    width: 50%;
+    aspect-ratio : 1 / 1;
+    margin: 0 0 50px;
+    padding: 0 0 0 50px;
+}
+
+.image {
+    max-height: 300px;
+}

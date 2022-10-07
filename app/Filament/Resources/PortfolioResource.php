@@ -37,10 +37,11 @@ class PortfolioResource extends Resource
                         }
                     }),
                 TextInput::make('slug')->required()->disabled(),
-                TagsInput::make('tag')->required(),
+                TagsInput::make('tags')->required(),
                 FileUpload::make('images')->multiple()->image()->required()->preserveFilenames(),
                 TextInput::make('subtitle')->required(),
-                RichEditor::make('content')->required()
+                RichEditor::make('content')->required(),
+                Forms\Components\DatePicker::make('created_at')->required()
             ])->columns(1);
     }
 

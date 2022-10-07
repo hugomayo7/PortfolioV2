@@ -19,7 +19,8 @@ class Portfolio extends Model
         'title',
         'subtitle',
         'content',
-        'slug'
+        'slug',
+        'created_at'
     ];
 
     protected $casts = [
