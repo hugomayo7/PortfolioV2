@@ -14,9 +14,9 @@
                     @foreach(\App\Models\Portfolio::all() as $portfolio)
                     <li class="item">
                         <div class="list_inner">
-                            <div class="image">
-                                <img src="/storage/{{$portfolio->images[0]}}" alt=""/>
-                                <div class="main" data-img-url="/storage/{{$portfolio->images[0]}}"></div>
+                            <div class="image" style="background-image: url('/storage/{{$portfolio->images[0]}}')">
+{{--                                <img src="/storage/{{$portfolio->images[0]}}" alt=""/>--}}
+{{--                                <div class="main" data-img-url="/storage/{{$portfolio->images[0]}}"></div>--}}
                                 <div class="details">
                                     <h3>{{$portfolio->title}}</h3>
                                     <span>{{$portfolio->subtitle}}</span>
