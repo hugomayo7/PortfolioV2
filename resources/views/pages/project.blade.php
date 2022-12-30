@@ -1,72 +1,49 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]>
-<html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>
-<html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en"> <!--<![endif]-->
-
-<head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-    <meta name="description" content="Name of your web site">
-    <meta name="author" content="Marketify">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <title>Hugo Mayonobe</title>
-
-    @include('layouts.head-css')
-</head>
-
-<body>
-
-<!-- PRELOADER -->
-<div id="preloader">
-    <div class="loader_line"></div>
-</div>
-<!-- /PRELOADER -->
-
-<!-- WRAPPER ALL -->
-<div class="cavani_tm_all_wrap" data-magic-cursor="show" data-enter="bounceIn" data-exit="">
-
-    <div class="cavani_tm_left_border"></div>
-    <div class="cavani_tm_right_border"></div>
-
-    @include('components.header')
-
-    <!-- /CONTENT -->
-    <div class="cavani_tm_mainpart">
-        <div class="cavani_tm_section animated">
-            <div class="content">
-                <div class="top_image">
-                    <img src="/storage/{{$portfolio->images[0]}}" alt="">
+<div class="cavani_tm_modalbox">
+    <div class="box_inner">
+        <div class="close"><a href="#"><i class="icon-cancel"></i></a></div>
+        <div class="description_wrap">
+            <div class="popup_details">
+                <div class="top_image"><img src="img/thumbs/4-2.jpg" alt="">
+                    <div class="main" data-img-url="img/portfolio/6.jpg"
+                         style="background-image: url(&quot;img/portfolio/6.jpg&quot;);"></div>
                 </div>
                 <div class="portfolio_main_title">
-                    <h3>{{$portfolio->title}}</h3>
-                    <span>{{$portfolio->subtitle}}</span>
+                    <h3>Alice Moon</h3>
+                    <span>Detail</span>
                     <div></div>
                 </div>
                 <div class="main_details">
                     <div class="textbox">
-                        {!! $portfolio->content !!}
+                        <p>We live in a world where we need to move quickly and iterate on our ideas as flexibly as
+                            possible. Building mockups strikes the ideal balance ease of modification. Building mockups
+                            strikes the ideal balance ease of modification.</p>
+                        <p>Mockups are useful both for the creative phase of the project - for instance when you're
+                            trying to figure out your user flows or the proper visual hierarchy - and the production
+                            phase when they phase when they will represent the target product. Building mockups strikes
+                            the ideal balance ease of modification.</p>
                     </div>
                     <div class="detailbox">
                         <ul>
                             <li>
-                                <span class="first">Technologies</span>
-                                <ul style="list-style: circle; margin-left: 20px">
-                                @foreach($portfolio->tags as $tag)
-                                    <li><span>{{$tag}}</span></li>
-                                @endforeach
-                                </ul>
+                                <span class="first">Client</span>
+                                <span>Alvaro Morata</span>
                             </li>
                             <li>
-                                <span class="first">Date de création</span>
-                                <span>{{$portfolio->created_at->format('d/m/Y')}}</span>
+                                <span class="first">Category</span>
+                                <span><a href="#">Detail</a></span>
+                            </li>
+                            <li>
+                                <span class="first">Date</span>
+                                <span>March 07, 2021</span>
+                            </li>
+                            <li>
+                                <span class="first">Share</span>
+                                <ul class="share">
+                                    <li><a href="#"><img class="svg" src="img/svg/social/facebook.svg" alt=""></a></li>
+                                    <li><a href="#"><img class="svg" src="img/svg/social/twitter.svg" alt=""></a></li>
+                                    <li><a href="#"><img class="svg" src="img/svg/social/instagram.svg" alt=""></a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -76,21 +53,27 @@
                         <li>
                             <div class="list_inner">
                                 <div class="my_image">
-                                    <img src="{{asset('img/thumbs/4-2.jpg')}}" alt="">
+                                    <img src="img/thumbs/4-2.jpg" alt="">
+                                    <div class="main" data-img-url="img/portfolio/1.jpg"
+                                         style="background-image: url(&quot;img/portfolio/1.jpg&quot;);"></div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="list_inner">
                                 <div class="my_image">
-                                    <img src="{{asset('img/thumbs/4-2.jpg')}}" alt="">
+                                    <img src="img/thumbs/4-2.jpg" alt="">
+                                    <div class="main" data-img-url="img/portfolio/2.jpg"
+                                         style="background-image: url(&quot;img/portfolio/2.jpg&quot;);"></div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="list_inner">
                                 <div class="my_image">
-                                    <img src="{{asset('img/thumbs/4-2.jpg')}}" alt="">
+                                    <img src="img/thumbs/4-2.jpg" alt="">
+                                    <div class="main" data-img-url="img/portfolio/3.jpg"
+                                         style="background-image: url(&quot;img/portfolio/3.jpg&quot;);"></div>
                                 </div>
                             </div>
                         </li>
@@ -99,18 +82,4 @@
             </div>
         </div>
     </div>
-    <!-- /CONTENT -->
-
-    @include('components.footer')
-
-    <!-- MAGIC CURSOR -->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
-    <!-- /MAGIC CURSOR -->
-
 </div>
-<!-- / WRAPPER ALL -->
-
-@include('layouts.scripts')
-</body>
-</html>
