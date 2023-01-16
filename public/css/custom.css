@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.top_image img {
+    object-fit: cover;
 }
 
 .main_details {
@@ -40,13 +46,9 @@
     padding-left: 100px !important;
 }
 
-.gallery_zoom .item {
-    width: 50%;
-    aspect-ratio : 1 / 1;
-    margin: 0 0 50px;
-    padding: 0 0 0 50px;
-}
-
-.image {
-    height: 300px;
+.item .list_inner .image {
+    height: 409px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

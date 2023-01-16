@@ -78,4 +78,9 @@ class PortfolioResource extends Resource
             'edit' => Pages\EditPortfolio::route('/{record}/edit'),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

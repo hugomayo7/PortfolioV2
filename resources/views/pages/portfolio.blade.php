@@ -14,15 +14,13 @@
                     @foreach(\App\Models\Portfolio::all() as $portfolio)
                     <li class="item">
                         <div class="list_inner">
-                            <div class="image">
-                                <img src="/storage/{{$portfolio->images[0]}}" alt=""/>
-                                <div class="main" data-img-url="/storage/{{$portfolio->images[0]}}"></div>
+                            <div class="image" style="background-image: url('/storage/{{$portfolio->images[0]}}')">
                                 <div class="details">
                                     <h3>{{$portfolio->title}}</h3>
                                     <span>{{$portfolio->subtitle}}</span>
                                 </div>
-                                <a class="cavani_tm_full_link"
-                                   href="{{route('portfolio', $portfolio->slug)}}"></a>
+                                <a class="cavani_tm_full_link portfolio_popup"
+                                   href="#" data-object="{{$portfolio}}"></a>
                             </div>
                         </div>
                     </li>
