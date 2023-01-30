@@ -1,4 +1,4 @@
-<div class="cavani_tm_section" id="about">
+<div class="cavani_tm_section animated" id="about">
     <div class="section_inner">
         <div class="cavani_tm_about">
             <div class="biography">

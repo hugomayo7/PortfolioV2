@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-})->name('home');
+Route::get('/', \App\Http\Livewire\Content::class)->name('home');
 
 Route::get('/portfolio/{slug}', function ($slug) {
     $portfolio = Portfolio::whereSlug($slug)->first();

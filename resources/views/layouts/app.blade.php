@@ -20,6 +20,8 @@
     <title>Hugo Mayonobe</title>
 
     @include('layouts.head-css')
+    @livewireStyles
+    @livewireScripts
 </head>
 
 <body>
@@ -36,23 +38,7 @@
     <div class="cavani_tm_left_border"></div>
     <div class="cavani_tm_right_border"></div>
 
-    @include('components.header')
-
-    <!-- /CONTENT -->
-    <div class="cavani_tm_mainpart">
-        <div class="author_image">
-            <div class="main ripple" id="ripple"></div>
-        </div>
-        <div class="main_content">
-            @include('pages.home')
-            @include('pages.about')
-            @include('pages.portfolio')
-{{--            @include('pages.services')--}}
-{{--            @include('pages.news')--}}
-            @include('pages.contact')
-        </div>
-    </div>
-    <!-- /CONTENT -->
+    <livewire:content />
 
     @include('components.footer')
 
@@ -63,7 +49,6 @@
 
 </div>
 <!-- / WRAPPER ALL -->
-
 @include('layouts.scripts')
 </body>
 </html>

@@ -13,7 +13,7 @@
                     </span>
             </h3>
             <div class="cavani_tm_button transition_link">
-                <a href="#about">En savoir plus</a>
+                <a wire:click.prevent="updateCurrentTab(1)" style="cursor: pointer">En savoir plus</a>
             </div>
         </div>
     </div>

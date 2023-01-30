@@ -1,4 +1,4 @@
-<div class="cavani_tm_section" id="portfolio">
+<div class="cavani_tm_section animated" id="portfolio">
     <div class="section_inner">
         <div class="cavani_tm_portfolio">
             <div class="cavani_tm_title">

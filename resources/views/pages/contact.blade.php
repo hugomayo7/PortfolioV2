@@ -1,4 +1,4 @@
-<div class="cavani_tm_section" id="contact">
+<div class="cavani_tm_section animated" id="contact">
     <div class="section_inner">
         <div class="cavani_tm_contact">
             <div class="cavani_tm_title">
