@@ -52,3 +52,19 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.textbox2 {
+    width: 75%;
+}
+
+.detailbox {
+    width: 25% !important;
+}
+
+.error {
+    color: red;
+}
+
+.contact-form {
+    width: 100%;
+}

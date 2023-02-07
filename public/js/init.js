@@ -12,8 +12,6 @@ jQuery(document).ready(function () {
 
     // here all ready functions
 
-    cavani_tm_modalbox();
-    cavani_tm_page_transition();
     cavani_tm_trigger_menu();
     cavani_tm_my_progress();
     cavani_tm_circular_progress();
@@ -39,57 +37,6 @@ jQuery(document).ready(function () {
 // ---------------   FUNCTIONS    ----------------------
 // -----------------------------------------------------
 
-// -----------------------------------------------------
-// --------------------   MODALBOX    ------------------
-// -----------------------------------------------------
-
-function cavani_tm_modalbox() {
-
-    "use strict";
-
-    jQuery('.cavani_tm_all_wrap').prepend('<div class="cavani_tm_modalbox"><div class="box_inner"><div class="close"><a href="#"><i class="icon-cancel"></i></a></div><div class="description_wrap"></div></div></div>');
-}
-
-// -----------------------------------------------------
-// -------------   PAGE TRANSITION    ------------------
-// -----------------------------------------------------
-
-function cavani_tm_page_transition() {
-
-    "use strict";
-
-    var section = jQuery('.cavani_tm_section');
-    var allLi = jQuery('.transition_link li');
-    var button = jQuery('.transition_link a');
-    var wrapper = jQuery('.cavani_tm_all_wrap');
-    var enter = wrapper.data('enter');
-    var exit = wrapper.data('exit');
-
-    button.on('click', function () {
-        var element = jQuery(this);
-        var href = element.attr('href');
-        if (element.parent().hasClass('cavani_tm_button')) {
-            jQuery('.menu .transition_link a[href="' + href + '"]').trigger('click');
-            hashtag();
-            return false;
-        }
-        var sectionID = jQuery(href);
-        var parent = element.closest('li');
-        if (!parent.hasClass('active')) {
-            allLi.removeClass('active');
-            wrapper.find(section).removeClass('animated ' + enter);
-            if (wrapper.hasClass('opened')) {
-                wrapper.find(section).addClass('animated ' + exit);
-            }
-            parent.addClass('active');
-            wrapper.addClass('opened');
-            wrapper.find(sectionID).removeClass('animated ' + exit).addClass('animated ' + enter);
-            jQuery(section).addClass('hidden');
-            jQuery(sectionID).removeClass('hidden').addClass('active');
-        }
-        return false;
-    });
-}
 
 // -----------------------------------------------------
 // ---------------   TRIGGER MENU    -------------------
@@ -193,23 +140,14 @@ function cavani_tm_portfolio_popup() {
 
     "use strict";
 
-    var modalBox = jQuery('.cavani_tm_modalbox');
-    var button = jQuery('.cavani_tm_portfolio .portfolio_popup');
-    var closePopup = modalBox.find('.close');
+    let modalBox = jQuery('.cavani_tm_modalbox');
+    let button = jQuery('.portfolio_popup');
+    let closePopup = modalBox.find('.close');
 
-    button.off().on('click', function () {
-        var element = jQuery(this);
-        var parent = element.closest('.list_inner');
-        var content = parent.find('.hidden_content').html();
-        var image = parent.find('.image .main').data('img-url');
-        var details = parent.find('.details').html();
-        modalBox.addClass('opened');
-        modalBox.find('.description_wrap').html(content);
-        modalBox.find('.popup_details').prepend('<div class="top_image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="' + image + '"></div></div>');
-        modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title">' + details + '<div>');
-        cavani_tm_data_images();
-        return false;
-    });
+    button.on('click', function () {
+        modalBox.addClass('opened')
+    })
+
     closePopup.on('click', function () {
         modalBox.removeClass('opened');
         modalBox.find('.description_wrap').html('');

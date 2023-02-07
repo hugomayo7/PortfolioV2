@@ -46,7 +46,7 @@
                     </ul>
                 </div>
                 <div class="copyright">
-                    <p>Copyright &copy; 2022</p>
+                    <p>Copyright &copy; 2023</p>
                 </div>
             </div>
         </div>
@@ -61,11 +61,11 @@
             <a class="text" href="/"><span>MAYONOBE</span></a>
         </div>
         <div class="menu">
-            <ul class="tabs">
-                <li class="active"><a wire:click.prevent="updateCurrentTab(0)" href="">Accueil</a></li>
-                <li><a wire:click.prevent="updateCurrentTab(1)" href="">A propos</a></li>
-                <li><a wire:click.prevent="updateCurrentTab(2)" href="">Portfolio</a></li>
-                <li><a wire:click.prevent="updateCurrentTab(3)" href="">Contact</a></li>
+            <ul class="tabs transition_link">
+                <li class="active"><a wire:click.prevent="updateCurrentTab(0)" href="#home">Accueil</a></li>
+                <li><a wire:click.prevent="updateCurrentTab(1)" href="#about">A propos</a></li>
+                <li><a wire:click.prevent="updateCurrentTab(2)" href="#portfolio">Portfolio</a></li>
+                <li><a wire:click.prevent="updateCurrentTab(3)" href="#contact">Contact</a></li>
             </ul>
             <span class="ccc"></span>
         </div>
@@ -79,16 +79,65 @@
         </div>
         <div class="main_content">
 
-            @if($currentTab == 0)
+            <div class="cavani_tm_section {{ $currentTab == 0 ? 'animated bounceIn' : ''}}" id="home"
+                 style="{{ $currentTab == 0 ? '' : 'display: none' }}">
                 @include('pages.home')
-            @elseif($currentTab == 1)
+            </div>
+            <div class="cavani_tm_section {{ $currentTab == 1 ? 'animated bounceIn' : ''}}" id="about"
+                 style="{{ $currentTab == 1 ? '' : 'display: none' }}">
                 @include('pages.about')
-            @elseif($currentTab == 2)
+            </div>
+            <div class="cavani_tm_section {{ $currentTab == 2 ? 'animated bounceIn' : ''}}" id="portfolio"
+                 style="{{ $currentTab == 2 ? '' : 'display: none' }}">
                 @include('pages.portfolio')
-            @elseif($currentTab == 3)
+            </div>
+            <div class="cavani_tm_section {{ $currentTab == 3 ? 'animated bounceIn' : ''}}" id="contact"
+                 style="{{ $currentTab == 3 ? '' : 'display: none' }}">
                 @include('pages.contact')
-            @endif
+            </div>
 
         </div>
+
+        <div class="cavani_tm_modalbox" wire:ignore.self>
+            <div class="box_inner">
+                <div class="close"><a href="#"><i class="icon-cancel"></i></a></div>
+                <div class="description_wrap">
+                    <div class="popup_details">
+                        <div class="top_image"><img style="opacity: 1 !important;"
+                                                    src="/storage/{{ $selectedPortfolio->images[0] }}" alt="">
+                        </div>
+                        <div class="portfolio_title" style="margin-bottom: 20px">
+                            <h3>{{ $selectedPortfolio->title }}</h3>
+                            <span>{{ $selectedPortfolio->subtitle }}</span>
+                            <div></div>
+                        </div>
+                        <div class="main_details">
+                            <div class="textbox2">
+                                {!! $selectedPortfolio->content !!}
+                            </div>
+                            <div class="detailbox">
+                                <ul>
+                                    <li>
+                                        <span class="first">Auteur</span>
+                                        <span>Hugo Mayonobe</span>
+                                    </li>
+                                    <li>
+                                        <span class="first">Technologies</span>
+                                        @foreach($selectedPortfolio->tags as $tag)
+                                            <span>{{ $tag }}</span>
+                                        @endforeach
+                                    </li>
+                                    <li>
+                                        <span class="first">Date</span>
+                                        <span>{{ $selectedPortfolio->created_at->format('d/m/Y') }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

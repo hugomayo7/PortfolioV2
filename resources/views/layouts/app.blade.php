@@ -20,6 +20,7 @@
     <title>Hugo Mayonobe</title>
 
     @include('layouts.head-css')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'node_modules/toastr/toastr.scss'])
     @livewireStyles
     @livewireScripts
 </head>

@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/plugins.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
+
 <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('js/modernizr.custom.js')}}"></script> <![endif]-->
 <!-- /STYLES -->
 
