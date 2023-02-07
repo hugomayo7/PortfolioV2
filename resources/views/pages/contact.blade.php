@@ -1,14 +1,14 @@
 <div class="section_inner">
     <div class="cavani_tm_contact">
         <div class="cavani_tm_title">
-            <span>Get in Touch</span>
+            <span>Me contacter</span>
         </div>
         <div class="short_info">
             <ul>
                 <li>
                     <div class="list_inner">
-                        <img class="svg" src="{{asset('img/svg/location.svg')}}" alt=""/>
-                        <span>Ave Street, New York, USA</span>
+                        <img class="svg" src="{{asset('img/svg/social/linkedin.svg')}}" alt=""/>
+                        <span><a href="https://www.linkedin.com/in/hugo-mayonobe/?originalSubdomain=fr">Hugo Mayonobe</a></span>
                     </div>
                 </li>
                 <li>
