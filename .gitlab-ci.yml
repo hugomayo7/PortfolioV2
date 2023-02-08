@@ -56,8 +56,7 @@ build:npm:
       - public/css/
       - public/js/
       - public/modules/
-      - public/mix-manifest.json
-
+      - public/build/
 deploy:production:
   stage: deploy
   extends: .only-master
@@ -70,6 +69,7 @@ deploy:production:
       --relative
       --perms --chmod=D750,F640
       --include vendor/
+      --include public/build/
       --include .env
       --exclude-from '.gitignore'
       --exclude-from '.rsyncignore'
