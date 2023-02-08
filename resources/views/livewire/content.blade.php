@@ -136,6 +136,22 @@
                                 </div>
                             </div>
                         </div>
+                        @if(count($selectedPortfolio->images) > 1)
+                            <div class="additional_images">
+                                <ul>
+                                    @foreach(array_slice($selectedPortfolio->images, 1) as $img)
+                                        <li>
+                                            <div class="list_inner">
+                                                <div class="my_image">
+                                                    <img style="opacity: 1 !important;" src="/storage/{{$img}}" alt=""/>
+                                                    <div class="main" data-img-url="img/portfolio/1.jpg"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
