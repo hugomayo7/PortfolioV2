@@ -21,7 +21,3 @@ Route::get('/portfolio/{slug}', function ($slug) {
 
     return view('pages.project', compact('portfolio'));
 })->name('portfolio');
-
-Route::get('/template', function () {
-    return view('welcome');
-});
