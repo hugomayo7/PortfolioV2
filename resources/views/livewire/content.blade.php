@@ -85,7 +85,7 @@
             </div>
             <div class="cavani_tm_section {{ $currentTab == 1 ? 'animated bounceIn' : ''}}" id="about"
                  style="{{ $currentTab == 1 ? '' : 'display: none' }}">
-                @include('pages.about')
+                @include('pages.about', ['abouts' => $abouts])
             </div>
             <div class="cavani_tm_section {{ $currentTab == 2 ? 'animated bounceIn' : ''}}" id="portfolio"
                  style="{{ $currentTab == 2 ? '' : 'display: none' }}">

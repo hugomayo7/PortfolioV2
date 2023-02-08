@@ -1,335 +1,156 @@
-<div class="section_inner">
+<div class="section_inner" wire:ignore>
     <div class="cavani_tm_about">
-        <div class="biography">
-            <div class="cavani_tm_title">
-                <span>A propos de moi</span>
-            </div>
-            <div class="wrapper">
-                <div class="left">
-                    <p>Hello there! My name is <strong>Alan Walker.</strong> I am a graphic designer, and I'm very
-                        passionate and dedicated to my work.</p>
-                    <p>With 20 years experience as a professional a graphic designer, I have acquired the skills and
-                        knowledge necessary to make your project a success.</p>
-                </div>
-                <div class="right">
-                    <ul>
-                        <li><span class="first">Name:</span><span class="second">Alan Walker</span></li>
-                        <li><span class="first">Address:</span><span class="second">Ave Street, New York, USA</span>
-                        </li>
-                        <li><span class="first">Study:</span><span class="second">Univercity of Oxford</span></li>
-                        <li><span class="first">Degree:</span><span class="second">Master of Science</span></li>
-                        <li><span class="first">Mail:</span><span class="second"><a
-                                    href="#">hello@cavani.com</a></span></li>
-                        <li><span class="first">Phone:</span><span class="second">+77 022 444 05 05</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="services">
-            <div class="wrapper">
-                <div class="service_list">
-                    <div class="cavani_tm_title">
-                        <span>Services</span>
-                    </div>
-                    <div class="list">
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Graphic Design</li>
-                            <li>Landing Page</li>
-                            <li>On-Page SEO</li>
-                            <li>Web Hosting</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service_list">
-                    <div class="cavani_tm_title">
-                        <span>Services</span>
-                    </div>
-                    <div class="list">
-                        <ul>
-                            <li>Painting &amp; Drawing</li>
-                            <li>Reading &amp; Writing</li>
-                            <li>Music &amp; Cinema</li>
-                            <li>Travel &amp; Picnik</li>
-                            <li>Rain &amp; Snow</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skills">
-            <div class="wrapper">
-                <div class="programming">
-                    <div class="cavani_tm_title">
-                        <span>Programming</span>
-                    </div>
-                    <div class="cavani_progress">
-                        <div class="progress_inner" data-value="95">
-                            <span><span class="label">HTML &amp; CSS</span><span class="number">95%</span></span>
-                            <div class="background">
-                                <div class="bar">
-                                    <div class="bar_in"></div>
+        @if($abouts && $abouts->informations)
+            @foreach($abouts->informations as $info)
+                @switch($info['type'])
+                    @case('about')
+                        <div class="biography">
+                            <div class="cavani_tm_title">
+                                <span>A propos de moi</span>
+                            </div>
+                            <div class="wrapper">
+                                <div class="left">
+                                    {!! $info['data']['about']['me'] !!}
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        @foreach($info['data']['about']['informations'] as $key => $about_info)
+                                            <li>
+                                                <span class="first">{{$key}}</span>
+                                                <span class="second">{{$about_info}}</span>
+                                            </li>
+                                        @endforeach
+                                        {{--<li><span class="first">Ville:</span><span class="second">La Rochelle, France</span>
+                                        </li>
+                                        <li><span class="first">Etude:</span><span class="second">Université de La Rochelle</span></li>
+                                        <li><span class="first">Diplôme:</span><span class="second">LP - Développement Web & Mobile</span></li>
+                                        <li><span class="first">Mail:</span><span class="second"><a
+                                                    href="mailto:hugomayonobe@gmail.com">hugomayonobe@gmail.com</a></span></li>
+                                        <li><span class="first">Téléphone:</span><span class="second">07 82 64 87 34</span></li>--}}
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="progress_inner" data-value="80">
-                            <span><span class="label">JavaScript</span><span class="number">80%</span></span>
-                            <div class="background">
-                                <div class="bar">
-                                    <div class="bar_in"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress_inner" data-value="90">
-                            <span><span class="label">WordPress</span><span class="number">90%</span></span>
-                            <div class="background">
-                                <div class="bar">
-                                    <div class="bar_in"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="language">
-                    <div class="cavani_tm_title">
-                        <span>Language</span>
-                    </div>
-                    <div class="circular_progress_bar">
-                        <ul>
-                            <li>
-                                <div class="list_inner">
-                                    <div class="myCircle" data-value="0.95"></div>
-                                    <div class="title"><span>English</span></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list_inner">
-                                    <div class="myCircle" data-value="0.8"></div>
-                                    <div class="title"><span>Russian</span></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list_inner">
-                                    <div class="myCircle" data-value="0.9"></div>
-                                    <div class="title"><span>Arabic</span></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="resume">
-            <div class="wrapper">
-                <div class="education">
-                    <div class="cavani_tm_title">
-                        <span>Education</span>
-                    </div>
-                    <div class="list">
-                        <div class="univ">
-                            <ul>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2014 - 2016</span>
+                        @break
+                    @case('sections')
+                        <div class="services">
+                            <div class="wrapper">
+                                @foreach($info['data']['sections'] as $section)
+                                    <div class="service_list">
+                                        <div class="cavani_tm_title">
+                                            <span>{{$section['title']}}</span>
                                         </div>
-                                        <div class="place">
-                                            <h3>Oxford Univercity</h3>
-                                            <span>Master Degree</span>
+                                        <div class="list">
+                                            <ul>
+                                                @foreach($section['items'] as $item)
+                                                    <li>{{$item['item']}}</li>
+                                                @endforeach
+                                                {{--<li>Laravel</li>
+                                                <li>Symfony</li>
+                                                <li>Flutter</li>
+                                                <li>ReactJS</li>--}}
+                                            </ul>
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2010 - 2014</span>
+                                @endforeach
+                                {{--<div class="service_list">
+                                    <div class="cavani_tm_title">
+                                        <span>Activités</span>
+                                    </div>
+                                    <div class="list">
+                                        <ul>
+                                            <li>Développement Web</li>
+                                            <li>Développement Mobile</li>
+                                            <li>Basketball</li>
+                                            <li>Musique</li>
+                                            <li>Jeux Vidéos</li>
+                                        </ul>
+                                    </div>
+                                </div>--}}
+                            </div>
+                        </div>
+                        @break
+                    @case('progresses')
+                        <div class="skills">
+                            <div class="wrapper">
+                                @foreach($info['data']['progress'] as $progress)
+                                    @if($progress['type'] == 'linear')
+                                        <div class="programming">
+                                            <div class="cavani_tm_title">
+                                                <span>{{$progress['title']}}</span>
+                                            </div>
+                                            <div class="cavani_progress">
+                                                @foreach($progress['items'] as $key => $value)
+                                                    <div class="progress_inner" data-value="{{$value}}">
+                                                        <span><span class="label">{{$key}}</span><span class="number">{{$value}}%</span></span>
+                                                        <div class="background">
+                                                            <div class="bar">
+                                                                <div class="bar_in"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
-                                        <div class="place">
-                                            <h3>Texas Univercity</h3>
-                                            <span>Bachelor Degree</span>
+                                    @elseif($progress['type'] == 'circular')
+                                        <div class="language">
+                                            <div class="cavani_tm_title">
+                                                <span>{{$progress['title']}}</span>
+                                            </div>
+                                            <div class="circular_progress_bar">
+                                                <ul>
+                                                    @foreach($progress['items'] as $key => $value)
+                                                        <li>
+                                                            <div class="list_inner">
+                                                                <div class="myCircle"
+                                                                     data-value="{{$value / 100}}"></div>
+                                                                <div class="title"><span>{{$key}}</span></div>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                        @break
+                    @case('dateables')
+                        <div class="resume">
+                            <div class="wrapper">
+                                @foreach($info['data']['dateable'] as $dateable)
+                                    <div class="education">
+                                        <div class="cavani_tm_title">
+                                            <span>{{$dateable['title']}}</span>
+                                        </div>
+                                        <div class="list">
+                                            <div class="univ">
+                                                <ul>
+                                                    @foreach($dateable['items'] as $item)
+                                                        <li>
+                                                            <div class="list_inner">
+                                                                <div class="time">
+                                                                    <span>{{$item['date']}}</span>
+                                                                </div>
+                                                                <div class="place">
+                                                                    <h3>{{$item['title']}}</h3>
+                                                                    <span>{{$item['subtitle']}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2008 - 2010</span>
-                                        </div>
-                                        <div class="place">
-                                            <h3>Simone College</h3>
-                                            <span>Associate Degree</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="experience">
-                    <div class="cavani_tm_title">
-                        <span>Experience</span>
-                    </div>
-                    <div class="list">
-                        <div class="univ">
-                            <ul>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2018 - running</span>
-                                        </div>
-                                        <div class="place">
-                                            <h3>Envato Elements</h3>
-                                            <span>Exclusive Author</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2015 - 2018</span>
-                                        </div>
-                                        <div class="place">
-                                            <h3>Avo Corporation</h3>
-                                            <span>Content Manager</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_inner">
-                                        <div class="time">
-                                            <span>2012 - 2015</span>
-                                        </div>
-                                        <div class="place">
-                                            <h3>FC Barcelona</h3>
-                                            <span>Football Player</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="partners">
-            <div class="cavani_tm_title">
-                <span>Partners</span>
-            </div>
-            <div class="list">
-                <ul>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/1.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/2.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/3.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/4.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/5.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/1.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/2.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <img src="{{asset('img/partners/3.png')}}" alt=""/>
-                            <a class="cavani_tm_full_link" href="#"></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="testimonials">
-            <div class="cavani_tm_title">
-                <span>Testimonials</span>
-            </div>
-            <div class="list">
-                <ul class="owl-carousel">
-                    <li>
-                        <div class="list_inner">
-                            <div class="text">
-                                <i class="icon-quote-left"></i>
-                                <p>Beautiful minimalist design and great, fast response with support. Highly
-                                    recommend. Thanks Marketify!</p>
-                            </div>
-                            <div class="details">
-                                <div class="image">
-                                    <div class="main" data-img-url="img/testimonials/1.jpg')}}"></div>
-                                </div>
-                                <div class="info">
-                                    <h3>Alexander Walker</h3>
-                                    <span>Graphic Designer</span>
-                                </div>
+                                @endforeach
+
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <div class="text">
-                                <i class="icon-quote-left"></i>
-                                <p>These people really know what they are doing! Great customer support availability
-                                    and supperb kindness.</p>
-                            </div>
-                            <div class="details">
-                                <div class="image">
-                                    <div class="main" data-img-url="img/testimonials/2.jpg')}}"></div>
-                                </div>
-                                <div class="info">
-                                    <h3>Armin Van Buuren</h3>
-                                    <span>Content Manager</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_inner">
-                            <div class="text">
-                                <i class="icon-quote-left"></i>
-                                <p>I had a little problem and the support was just awesome to quickly solve the
-                                    situation. And keep going on.</p>
-                            </div>
-                            <div class="details">
-                                <div class="image">
-                                    <div class="main" data-img-url="img/testimonials/3.jpg')}}"></div>
-                                </div>
-                                <div class="info">
-                                    <h3>Baraka Clinton</h3>
-                                    <span>English Teacher</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                        @break
+                @endswitch
+            @endforeach
+        @endif
     </div>
 </div>

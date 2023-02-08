@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\About;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -18,9 +19,12 @@ class Content extends Component
     public $mail;
     public $message;
 
+    public $abouts = [];
+
     public function mount()
     {
         $this->selectedPortfolio = Portfolio::first();
+        $this->abouts = About::first();
     }
 
     public function render()
