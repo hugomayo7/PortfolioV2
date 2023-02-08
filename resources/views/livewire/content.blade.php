@@ -98,46 +98,48 @@
 
         </div>
 
-        <div class="cavani_tm_modalbox" wire:ignore.self>
-            <div class="box_inner">
-                <div class="close"><a href="#"><i class="icon-cancel"></i></a></div>
-                <div class="description_wrap">
-                    <div class="popup_details">
-                        <div class="top_image"><img style="opacity: 1 !important;"
-                                                    src="/storage/{{ $selectedPortfolio->images[0] }}" alt="">
-                        </div>
-                        <div class="portfolio_title" style="margin-bottom: 20px">
-                            <h3>{{ $selectedPortfolio->title }}</h3>
-                            <span>{{ $selectedPortfolio->subtitle }}</span>
-                            <div></div>
-                        </div>
-                        <div class="main_details">
-                            <div class="textbox2">
-                                {!! $selectedPortfolio->content !!}
+        @if($selectedPortfolio)
+            <div class="cavani_tm_modalbox" wire:ignore.self>
+                <div class="box_inner">
+                    <div class="close"><a href="#"><i class="icon-cancel"></i></a></div>
+                    <div class="description_wrap">
+                        <div class="popup_details">
+                            <div class="top_image"><img style="opacity: 1 !important;"
+                                                        src="/storage/{{ $selectedPortfolio->images[0] }}" alt="">
                             </div>
-                            <div class="detailbox">
-                                <ul>
-                                    <li>
-                                        <span class="first">Auteur</span>
-                                        <span>Hugo Mayonobe</span>
-                                    </li>
-                                    <li>
-                                        <span class="first">Technologies</span>
-                                        @foreach($selectedPortfolio->tags as $tag)
-                                            <span>{{ $tag }}</span>
-                                        @endforeach
-                                    </li>
-                                    <li>
-                                        <span class="first">Date</span>
-                                        <span>{{ $selectedPortfolio->created_at->format('d/m/Y') }}</span>
-                                    </li>
-                                </ul>
+                            <div class="portfolio_title" style="margin-bottom: 20px">
+                                <h3>{{ $selectedPortfolio->title }}</h3>
+                                <span>{{ $selectedPortfolio->subtitle }}</span>
+                                <div></div>
+                            </div>
+                            <div class="main_details">
+                                <div class="textbox2">
+                                    {!! $selectedPortfolio->content !!}
+                                </div>
+                                <div class="detailbox">
+                                    <ul>
+                                        <li>
+                                            <span class="first">Auteur</span>
+                                            <span>Hugo Mayonobe</span>
+                                        </li>
+                                        <li>
+                                            <span class="first">Technologies</span>
+                                            @foreach($selectedPortfolio->tags as $tag)
+                                                <span>{{ $tag }}</span>
+                                            @endforeach
+                                        </li>
+                                        <li>
+                                            <span class="first">Date</span>
+                                            <span>{{ $selectedPortfolio->created_at->format('d/m/Y') }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
 
     </div>
 </div>

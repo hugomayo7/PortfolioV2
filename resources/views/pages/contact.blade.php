@@ -8,7 +8,7 @@
                 <li>
                     <div class="list_inner">
                         <img class="svg" src="{{asset('img/svg/social/linkedin.svg')}}" alt=""/>
-                        <span><a href="https://www.linkedin.com/in/hugo-mayonobe/?originalSubdomain=fr">Hugo Mayonobe</a></span>
+                        <span><a target="_blank" href="https://www.linkedin.com/in/hugo-mayonobe/?originalSubdomain=fr">Hugo Mayonobe</a></span>
                     </div>
                 </li>
                 <li>

@@ -2,7 +2,7 @@
     <div class="cavani_tm_about">
         <div class="biography">
             <div class="cavani_tm_title">
-                <span>About Me</span>
+                <span>A propos de moi</span>
             </div>
             <div class="wrapper">
                 <div class="left">

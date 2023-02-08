@@ -1,0 +1,93 @@
+image: popallo/laravel-deploy:alpine-php80
+
+.skip-ci:
+  rules:
+    - if: '$CI_COMMIT_MESSAGE !~ /^doc:/ && $CI_COMMIT_MESSAGE !~ /^doc\(.*\):/'
+      when: always
+
+.only-master:
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master" && $CI_COMMIT_MESSAGE !~ /^doc:/ && $CI_COMMIT_MESSAGE !~ /^doc\(.*\):/'
+      when: on_success
+
+.only-develop:
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "develop" && $CI_COMMIT_MESSAGE !~ /^doc:/ && $CI_COMMIT_MESSAGE !~ /^doc\(.*\):/'
+      when: on_success
+
+##
+# STAGES
+##
+stages:
+  - build
+  # - test
+  - deploy
+
+build:composer:
+  stage: build
+  extends: .skip-ci
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}-composer
+    paths:
+      - vendor/
+  script:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts --optimize-autoloader --no-dev
+    - cp .env.example .env
+    - echo -e ${LARAVEL_ENV_PROD} | tr ' ' '\n' > .env
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - vendor/
+      - .env
+
+build:npm:
+  stage: build
+  extends: .skip-ci
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}-npm
+    paths:
+      - node_modules/
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    expire_in: 1 month
+    paths:
+      - public/css/
+      - public/js/
+      - public/modules/
+      - public/mix-manifest.json
+
+deploy:production:
+  stage: deploy
+  extends: .only-master
+  environment:
+    name: production
+  script:
+    - echo "Deploying ${CI_COMMIT_SHA} from ${CI_COMMIT_REF_NAME} to production server"
+    - ssh -p${SSH_PORT} ${SSH_USER}@${SSH_HOST} "cd ${HTTP_PATH} && mkdir -p upload && rm -rf old"
+    - rsync -cazov -e "ssh -p ${SSH_PORT}"
+      --relative
+      --perms --chmod=D750,F640
+      --include vendor/
+      --include .env
+      --exclude-from '.gitignore'
+      --exclude-from '.rsyncignore'
+      --exclude '.gitignore'
+      --exclude '.rsyncignore'
+      .
+      ${SSH_USER}@${SSH_HOST}:${HTTP_PATH}/upload/
+    - ssh -p${SSH_PORT} ${SSH_USER}@${SSH_HOST} "sudo chown ${HTTP_USER}:${HTTP_GROUP} -R ${HTTP_PATH}"
+    - ssh -p${SSH_PORT} ${SSH_USER}@${SSH_HOST} "cd ${HTTP_PATH}/upload/ && php artisan migrate --force && php artisan db:seed --force"
+    - ssh -p${SSH_PORT} ${SSH_USER}@${SSH_HOST} "cd ${HTTP_PATH} && rm -rf current/public/storage && [ ! -d current/ ] || mv current/ old && mv upload/ current && [ ! -d old/storage ] || cp -R old/storage current/ && cd current/ && php artisan optimize:clear && php artisan optimize && php artisan storage:link"
+
+  before_script:
+    - apk update && apk add rsync
+    - export CI_JOB_DATE=$(TZ=Europe/Paris date)
+    # Setup SSH deploy keys
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PK" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -p ${SSH_PORT} -t rsa ${SSH_HOST} >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
