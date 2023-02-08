@@ -24,7 +24,7 @@ class Content extends Component
     public function mount()
     {
         $this->selectedPortfolio = Portfolio::first();
-        $this->abouts = About::first();
+        $this->abouts = About::firstOr(fn() => null);
     }
 
     public function render()
