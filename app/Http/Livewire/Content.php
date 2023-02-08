@@ -59,7 +59,6 @@ class Content extends Component
             'mail' => $validated['mail'],
             'message' => $validated['message']
         ]));
-
         $this->emit('emailSent');
 
         $this->name = "";
