@@ -36,7 +36,6 @@ class PortfolioResource extends Resource
                             $set('slug', Str::slug($state));
                         }
                     }),
-                TextInput::make('slug')->required()->disabled(),
                 TagsInput::make('tags')->required(),
                 FileUpload::make('images')->multiple()->image()->required()->preserveFilenames(),
                 TextInput::make('subtitle')->required(),
