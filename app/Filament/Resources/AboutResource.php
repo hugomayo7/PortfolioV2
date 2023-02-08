@@ -6,18 +6,22 @@ use App\Filament\Resources\AboutResource\Pages;
 use App\Filament\Resources\AboutResource\RelationManagers;
 use App\Models\About;
 use Filament\Forms;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = About::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $label = 'CV';
+    protected static ?string $pluralLabel = 'CV';
+
+    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
     public static function form(Form $form): Form
     {
@@ -26,35 +30,38 @@ class AboutResource extends Resource
                 Forms\Components\Builder::make('informations')
                     ->collapsible()
                     ->collapsed()
+                    ->label('Informations')
                     ->blocks([
                         Forms\Components\Builder\Block::make('about')
                             ->schema([
                                 Forms\Components\RichEditor::make('about.me')
-                                    ->label('About'),
+                                    ->label('Description'),
 
                                 Forms\Components\KeyValue::make('about.informations')->reorderable(),
-                            ]),
+                            ])->label('Informations Principales'),
 
                         Forms\Components\Builder\Block::make('sections')
                             ->schema([
                                 Forms\Components\Repeater::make('sections')
+                                    ->label('Listes')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
-                                            ->label('Title'),
+                                            ->label('Titre'),
 
                                         Forms\Components\Repeater::make('items')
                                             ->schema([
-                                                Forms\Components\TextInput::make('item')
-                                            ])
+                                                Forms\Components\TextInput::make('item')->label('Element')
+                                            ])->label('Elements de la liste')
                                     ])
-                            ]),
+                            ])->label('Listes'),
 
                         Forms\Components\Builder\Block::make('progresses')
                             ->schema([
                                 Forms\Components\Repeater::make('progress')
+                                    ->label('Progressions')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
-                                            ->label('Title'),
+                                            ->label('Titre'),
 
                                         Forms\Components\Select::make('type')
                                             ->label('Barre de progression')
@@ -65,28 +72,30 @@ class AboutResource extends Resource
                                                 ]
                                             ),
 
-                                        Forms\Components\KeyValue::make('items'),
+                                        Forms\Components\KeyValue::make('items')->label('Elements')->reorderable(),
                                     ])
-                            ]),
+                            ])->label('Progressions'),
 
                         Forms\Components\Builder\Block::make('dateables')
                             ->schema([
                                 Forms\Components\Repeater::make('dateable')
+                                    ->label('Dates')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
                                             ->label('Title'),
 
                                         Forms\Components\Repeater::make('items')
+                                            ->label('Elements')
                                             ->schema([
                                                 Forms\Components\TextInput::make('date'),
 
                                                 Forms\Components\Card::make([
-                                                    Forms\Components\TextInput::make('title'),
-                                                    Forms\Components\TextInput::make('subtitle'),
+                                                    Forms\Components\TextInput::make('title')->label('Titre'),
+                                                    Forms\Components\TextInput::make('subtitle')->label('Sous-titre'),
                                                 ])
                                             ])
                                     ])
-                            ])
+                            ])->label('Dates')
                     ])
             ])->columns(1);
     }
@@ -124,5 +133,10 @@ class AboutResource extends Resource
             'create' => Pages\CreateAbout::route('/create'),
             'edit' => Pages\EditAbout::route('/{record}/edit'),
         ];
+    }
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['fr'];
     }
 }

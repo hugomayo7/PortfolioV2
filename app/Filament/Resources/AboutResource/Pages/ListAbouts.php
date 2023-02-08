@@ -31,7 +31,7 @@ class ListAbouts extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+
         ];
     }
 }

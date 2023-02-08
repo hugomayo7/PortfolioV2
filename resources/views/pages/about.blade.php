@@ -16,17 +16,10 @@
                                     <ul>
                                         @foreach($info['data']['about']['informations'] as $key => $about_info)
                                             <li>
-                                                <span class="first">{{$key}}</span>
+                                                <span class="first">{{$key}}:</span>
                                                 <span class="second">{{$about_info}}</span>
                                             </li>
                                         @endforeach
-                                        {{--<li><span class="first">Ville:</span><span class="second">La Rochelle, France</span>
-                                        </li>
-                                        <li><span class="first">Etude:</span><span class="second">Université de La Rochelle</span></li>
-                                        <li><span class="first">Diplôme:</span><span class="second">LP - Développement Web & Mobile</span></li>
-                                        <li><span class="first">Mail:</span><span class="second"><a
-                                                    href="mailto:hugomayonobe@gmail.com">hugomayonobe@gmail.com</a></span></li>
-                                        <li><span class="first">Téléphone:</span><span class="second">07 82 64 87 34</span></li>--}}
                                     </ul>
                                 </div>
                             </div>
@@ -45,28 +38,10 @@
                                                 @foreach($section['items'] as $item)
                                                     <li>{{$item['item']}}</li>
                                                 @endforeach
-                                                {{--<li>Laravel</li>
-                                                <li>Symfony</li>
-                                                <li>Flutter</li>
-                                                <li>ReactJS</li>--}}
                                             </ul>
                                         </div>
                                     </div>
                                 @endforeach
-                                {{--<div class="service_list">
-                                    <div class="cavani_tm_title">
-                                        <span>Activités</span>
-                                    </div>
-                                    <div class="list">
-                                        <ul>
-                                            <li>Développement Web</li>
-                                            <li>Développement Mobile</li>
-                                            <li>Basketball</li>
-                                            <li>Musique</li>
-                                            <li>Jeux Vidéos</li>
-                                        </ul>
-                                    </div>
-                                </div>--}}
                             </div>
                         </div>
                         @break
@@ -129,11 +104,11 @@
                                                 <ul>
                                                     @foreach($dateable['items'] as $item)
                                                         <li>
-                                                            <div class="list_inner">
+                                                            <div class="list_inner" style="flex-direction: column">
                                                                 <div class="time">
                                                                     <span>{{$item['date']}}</span>
                                                                 </div>
-                                                                <div class="place">
+                                                                <div class="place" style="width: 100% !important; margin-top: 20px">
                                                                     <h3>{{$item['title']}}</h3>
                                                                     <span>{{$item['subtitle']}}</span>
                                                                 </div>
