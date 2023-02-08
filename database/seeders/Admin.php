@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class Admin extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        User::create([
             'name' => 'Hugo Mayonobe',
             'email' => 'hugomayonobe@gmail.com',
             'password' => Hash::make('hugosimon2007'),
