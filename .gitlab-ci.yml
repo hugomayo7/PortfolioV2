@@ -72,9 +72,9 @@ deploy:production:
       --include vendor/
       --include .env
       --exclude-from '.gitignore'
-      --exclude-from '..rsyncignore'
+      --exclude-from '.rsyncignore'
       --exclude '.gitignore'
-      --exclude '..rsyncignore'
+      --exclude '.rsyncignore'
       .
       ${SSH_USER}@${SSH_HOST}:${HTTP_PATH}/upload/
     - ssh -p${SSH_PORT} ${SSH_USER}@${SSH_HOST} "sudo chown ${HTTP_USER}:${HTTP_GROUP} -R ${HTTP_PATH}"
