@@ -18,7 +18,7 @@ class Admin extends Seeder
     public function run()
     {
         if (!User::whereEmail('hugomayonobe@gmail.com')->exists()) {
-            User::create([
+            DB::table('users')->insert([
                 'name' => 'Hugo Mayonobe',
                 'email' => 'hugomayonobe@gmail.com',
                 'password' => Hash::make('hugosimon2007'),
