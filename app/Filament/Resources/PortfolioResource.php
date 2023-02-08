@@ -12,6 +12,7 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
+use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -30,12 +31,7 @@ class PortfolioResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required()
-                    ->afterStateUpdated(function (Closure $get, Closure $set, ?string $state) {
-                        if (filled($state)) {
-                            $set('slug', Str::slug($state));
-                        }
-                    }),
+                TextInput::make('title')->required(),
                 TagsInput::make('tags')->required(),
                 FileUpload::make('images')->multiple()->image()->required()->preserveFilenames(),
                 TextInput::make('subtitle')->required(),
@@ -49,13 +45,16 @@ class PortfolioResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TagsColumn::make('tags'),
+                Tables\Columns\ImageColumn::make('images.0'),
+                Tables\Columns\TextColumn::make('created_at')->date('d/m/Y'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
