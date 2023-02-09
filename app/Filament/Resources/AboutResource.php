@@ -11,6 +11,8 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class AboutResource extends Resource
 {
@@ -126,14 +128,30 @@ class AboutResource extends Resource
 
     public static function getPages(): array
     {
-        $about = About::firstOr(fn() => null);
+        if (Schema::hasTable('abouts')) {
+            $about = About::firstOr(fn() => null);
 
+            return [
+                'index' => $about ? Pages\ListAbouts::route('/') : Pages\CreateAbout::route('/'),
+                'create' => Pages\CreateAbout::route('/create'),
+                'edit' => Pages\EditAbout::route('/{record}/edit'),
+            ];
+        } else
+            return [
+                'index' => Pages\ListAbouts::route('/'),
+                'create' => Pages\CreateAbout::route('/create'),
+                'edit' => Pages\EditAbout::route('/{record}/edit'),
+            ];
+    }
+
+    /*public static function getPages(): array
+    {
         return [
-            'index' => $about ? Pages\ListAbouts::route('/') : Pages\CreateAbout::route('/'),
+            'index' => Pages\ListAbouts::route('/'),
             'create' => Pages\CreateAbout::route('/create'),
             'edit' => Pages\EditAbout::route('/{record}/edit'),
         ];
-    }
+    }*/
 
     public static function getTranslatableLocales(): array
     {

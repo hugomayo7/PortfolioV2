@@ -2,9 +2,8 @@
     <!-- MOBILE MENU -->
     <div class="cavani_tm_topbar">
         <div class="topbar_inner">
-            <div class="logo" data-type="image">
+            <div class="logo" data-type="text">
                 <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
-                <a class="image" href="#"><img src="{{asset('img/logo/dark.png')}}" alt=""/></a>
                 <a class="text" href="#"><span>MAYONOBE</span></a>
             </div>
             <div class="trigger">
@@ -20,7 +19,7 @@
         <div class="inner">
             <div class="wrapper">
                 <div class="avatar">
-                    <div class="image" data-img-url="/img/about/1.jpg"></div>
+
                 </div>
                 <div class="menu_list">
                     <ul class="transition_link">
@@ -32,17 +31,8 @@
                 </div>
                 <div class="social">
                     <ul>
-                        <li><a href="#"><img class="svg" src="{{asset('img/svg/social/facebook.svg')}}" alt=""/></a>
-                        </li>
-                        <li><a href="#"><img class="svg" src="{{asset('img/svg/social/twitter.svg')}}" alt=""/></a>
-                        </li>
-                        <li><a href="#"><img class="svg" src="{{asset('img/svg/social/instagram.svg')}}"
-                                             alt=""/></a>
-                        </li>
-                        <li><a href="#"><img class="svg" src="{{asset('img/svg/social/dribbble.svg')}}" alt=""/></a>
-                        </li>
-                        <li><a href="#"><img class="svg" src="{{asset('img/svg/social/tik-tok.svg')}}" alt=""/></a>
-                        </li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/hugo-mayonobe/?originalSubdomain=fr"><img class="svg" src="/img/svg/social/linkedin.svg" alt=""/></a></li>
+                        <li><a target="_blank" href="https://github.com/hugomayo7"><img class="svg" src="/img/svg/social/github.svg" alt=""/></a></li>
                     </ul>
                 </div>
                 <div class="copyright">
@@ -57,7 +47,6 @@
     <div class="cavani_tm_header" wire:ignore>
         <div class="logo" data-type="text">
             <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
-            <a class="image" href="/"><img src="{{asset('img/logo/dark.png')}}" alt=""/></a>
             <a class="text" href="/"><span>MAYONOBE</span></a>
         </div>
         <div class="menu">

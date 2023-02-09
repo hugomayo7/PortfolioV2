@@ -11,6 +11,7 @@ class About extends Model
 
     public $timestamps = false;
 
+
     protected $fillable = ['informations'];
 
     protected $casts = ['informations' => 'array'];
