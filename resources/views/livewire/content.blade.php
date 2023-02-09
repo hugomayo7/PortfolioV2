@@ -114,7 +114,7 @@
                                         <li>
                                             <span class="first">Technologies</span>
                                             @foreach($selectedPortfolio->tags as $tag)
-                                                <span>{{ $tag }}</span>
+                                                <span>{{ $tag }}</span><br>
                                             @endforeach
                                         </li>
                                         <li>
