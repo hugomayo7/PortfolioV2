@@ -12,12 +12,17 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <meta name="description" content="Name of your web site">
-    <meta name="author" content="Marketify">
+    <meta name="title" content="Hugo Mayonobe">
+    <meta name="description" content="Retrouvez l'ensemble de mes projets ainsi que mon parcours sur mon site portfolio !">
+    <meta name="author" content="Hugo Mayonobe">
+    <meta name="robots" content="index, follow" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>Hugo Mayonobe</title>
+
+    <link rel="canonical" href=" https://mayonobe.fr">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     @include('layouts.head-css')
     @vite(['resources/css/app.css', 'resources/js/app.js', 'node_modules/toastr/toastr.scss'])
