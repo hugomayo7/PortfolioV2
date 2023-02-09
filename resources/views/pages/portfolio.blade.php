@@ -13,7 +13,7 @@
                 @foreach(\App\Models\Portfolio::all()->sortByDesc('created_at') as $portfolio)
                     <li class="item">
                         <div class="list_inner">
-                            <div class="image" style="background-image: url('/storage/{{$portfolio->images[0]}}'); background-position: center; background-size: contain; border: 1px solid #b1adb7">
+                            <div class="image portfolio-preview-image" style="background-image: url('/storage/{{$portfolio->images[0]}}'); background-position: center; background-size: contain; border: 1px solid #b1adb7">
                                 <div class="details">
                                     <h3>{{$portfolio->title}}</h3>
                                     <span>{{$portfolio->subtitle}}</span>

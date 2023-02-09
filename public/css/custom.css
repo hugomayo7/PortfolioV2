@@ -97,3 +97,11 @@
 .contact-form {
     width: 100%;
 }
+
+.portfolio-preview-image {
+    filter: grayscale(1);
+}
+
+.portfolio-preview-image:hover {
+    filter: grayscale(0);
+}
