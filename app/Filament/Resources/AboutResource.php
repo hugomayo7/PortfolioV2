@@ -128,30 +128,12 @@ class AboutResource extends Resource
 
     public static function getPages(): array
     {
-        if (Schema::hasTable('abouts')) {
-            $about = About::firstOr(fn() => null);
-
-            return [
-                'index' => $about ? Pages\ListAbouts::route('/') : Pages\CreateAbout::route('/'),
-                'create' => Pages\CreateAbout::route('/create'),
-                'edit' => Pages\EditAbout::route('/{record}/edit'),
-            ];
-        } else
-            return [
-                'index' => Pages\ListAbouts::route('/'),
-                'create' => Pages\CreateAbout::route('/create'),
-                'edit' => Pages\EditAbout::route('/{record}/edit'),
-            ];
-    }
-
-    /*public static function getPages(): array
-    {
         return [
             'index' => Pages\ListAbouts::route('/'),
             'create' => Pages\CreateAbout::route('/create'),
             'edit' => Pages\EditAbout::route('/{record}/edit'),
         ];
-    }*/
+    }
 
     public static function getTranslatableLocales(): array
     {

@@ -23,7 +23,7 @@ class ListAbouts extends EditRecord
             $this->fillForm();
             $this->previousUrl = url()->previous();
         } else {
-            $this->redirectRoute('filament.pages.dashboard');
+            $this->redirectRoute('filament.resources.abouts.create');
         }
 
     }
