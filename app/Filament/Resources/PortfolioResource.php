@@ -49,7 +49,7 @@ class PortfolioResource extends Resource
                 Tables\Columns\TagsColumn::make('tags'),
                 Tables\Columns\ImageColumn::make('images.0'),
                 Tables\Columns\TextColumn::make('created_at')->date('d/m/Y'),
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])
