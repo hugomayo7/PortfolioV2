@@ -68,3 +68,30 @@
 .contact-form {
     width: 100%;
 }
+
+@media screen and (max-width: 1040px) {
+    .main_details {
+        display: block;
+    }
+
+    .textbox {
+        width: 100%;
+        padding-left: 0px !important;
+    }
+
+    .detailbox {
+        width: 100%;
+    }
+
+    .portfolio_main_title {
+        padding-left: 0px !important;
+    }
+
+    .textbox2 {
+        width: 100%;
+    }
+
+    .detailbox {
+        width: 100% !important;
+    }
+}
