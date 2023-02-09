@@ -4,13 +4,13 @@
     }
 
     .textbox {
-        width: 100%;
+        width: 100% !important;
         padding-left: 0px !important;
     }
 
     .detailbox {
-        margin-top: 30px;
-        width: 100%;
+        margin-top: 30px !important;
+        width: 100% !important;
     }
 
     .portfolio_main_title {
