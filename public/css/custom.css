@@ -50,7 +50,7 @@
 }
 
 .detailbox {
-    width: 30%;
+    width: 25%;
     padding: 40px;
 }
 
@@ -84,10 +84,6 @@
 
 .textbox2 {
     width: 75%;
-}
-
-.detailbox {
-    width: 25% !important;
 }
 
 .error {
