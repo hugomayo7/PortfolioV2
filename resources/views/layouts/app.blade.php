@@ -25,7 +25,7 @@
     <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}">
 
     @include('layouts.head-css')
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'node_modules/toastr/toastr.scss'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'node_modules/toastr/toastr.scss', 'resources/css/custom.css'])
     @livewireStyles
     @livewireScripts
 </head>
