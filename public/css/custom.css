@@ -80,6 +80,7 @@
     }
 
     .detailbox {
+        margin-top: 30px;
         width: 100%;
     }
 
@@ -88,7 +89,7 @@
     }
 
     .textbox2 {
-        width: 100%;
+        width: 100% !important;
     }
 
     .detailbox {
