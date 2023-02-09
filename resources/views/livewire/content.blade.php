@@ -96,12 +96,12 @@
                             <div class="top_image"><img style="opacity: 1 !important;"
                                                         src="/storage/{{ $selectedPortfolio->images[0] }}" alt="">
                             </div>
-                            <div class="portfolio_title" style="margin-bottom: 20px">
+                            <div class="portfolio_title" style="margin-bottom: 20px; margin-top: 30px">
                                 <h3>{{ $selectedPortfolio->title }}</h3>
                                 <span>{{ $selectedPortfolio->subtitle }}</span>
                                 <div></div>
                             </div>
-                            <div class="main_details">
+                            <div class="main_details" style="margin-top: 15px">
                                 <div class="textbox2">
                                     {!! $selectedPortfolio->content !!}
                                 </div>
