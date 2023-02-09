@@ -4,7 +4,7 @@
         <div class="topbar_inner">
             <div class="logo" data-type="text">
                 <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
-                <a class="text" href="#"><span>MAYONOBE</span></a>
+                <a class="text" href="/"><span>MAYONOBE</span></a>
             </div>
             <div class="trigger">
                 <div class="hamburger hamburger--slider">
