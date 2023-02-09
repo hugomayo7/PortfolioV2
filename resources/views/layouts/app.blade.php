@@ -17,7 +17,7 @@
     <meta name="author" content="Hugo Mayonobe">
     <meta name="robots" content="index, follow" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Hugo Mayonobe</title>
 
