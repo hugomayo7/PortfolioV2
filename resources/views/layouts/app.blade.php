@@ -22,7 +22,7 @@
     <title>Hugo Mayonobe</title>
 
     <link rel="canonical" href=" https://mayonobe.fr">
-    <link rel="icon" type="image/x-icon" href="{{asset('/img/favicon.ico')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}">
 
     @include('layouts.head-css')
     @vite(['resources/css/app.css', 'resources/js/app.js', 'node_modules/toastr/toastr.scss'])
