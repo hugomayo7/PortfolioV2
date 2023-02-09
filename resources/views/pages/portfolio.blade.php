@@ -10,7 +10,7 @@
         </div>
         <div class="portfolio_list">
             <ul class="gallery_zoom">
-                @foreach(\App\Models\Portfolio::all() as $portfolio)
+                @foreach(\App\Models\Portfolio::all()->sortByDesc('created_at') as $portfolio)
                     <li class="item">
                         <div class="list_inner">
                             <div class="image" style="background-image: url('/storage/{{$portfolio->images[0]}}')">
