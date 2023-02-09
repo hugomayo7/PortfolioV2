@@ -324,7 +324,7 @@ h6 { font-size: 16px; }
 	font-weight: 500;
 	padding: 0px 30px;
 	display: inline-block;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -339,7 +339,7 @@ h6 { font-size: 16px; }
 	bottom: 15px;
 	background-color: #333;
 	z-index: -1;
-	
+
 	-webkit-transition: all .5s ease;
 	   -moz-transition: all .5s ease;
 	    -ms-transition: all .5s ease;
@@ -408,8 +408,8 @@ h6 { font-size: 16px; }
 .cavani_tm_topbar .hamburger{
 	padding: 0px;
 }
-.cavani_tm_topbar .hamburger-inner, 
-.cavani_tm_topbar .hamburger-inner:after, 
+.cavani_tm_topbar .hamburger-inner,
+.cavani_tm_topbar .hamburger-inner:after,
 .cavani_tm_topbar .hamburger-inner:before{
 	width: 30px;
 	height: 2px;
@@ -429,7 +429,7 @@ h6 { font-size: 16px; }
 	width: 200px;
 	z-index: 15;
 	background-color: #fff;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -563,7 +563,7 @@ h6 { font-size: 16px; }
 	right: 0px;
 	overflow: hidden;
 	overflow-y: scroll;
-	
+
 	opacity: 0;
 	visibility: hidden;
 	z-index: 8;
@@ -662,7 +662,7 @@ h6 { font-size: 16px; }
 	border: 2px solid #333;
 	font-family: "Poppins";
 	font-weight: 500;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -772,7 +772,7 @@ h6 { font-size: 16px; }
 .cavani_tm_about .biography .right ul li a{
 	text-decoration: none;
 	color: #7d7789;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -899,7 +899,7 @@ h6 { font-size: 16px; }
 	-webkit-animation: wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Safari 4+ */
 	-moz-animation:    wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Fx 5+ */
 	animation:         wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* IE 10+ */
-	width:100%;	
+	width:100%;
 }
 
 @-webkit-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
@@ -1078,7 +1078,7 @@ h6 { font-size: 16px; }
     float: left;
     padding-left: 2px;
     min-width: calc(100% + 12px);
-} 
+}
 .cavani_tm_about .partners .list ul li{
 	margin: 0px;
     float: left;
@@ -1091,18 +1091,18 @@ h6 { font-size: 16px; }
     margin-top: -2px;
     margin-left: -2px;
     overflow: hidden;
-} 
+}
 .cavani_tm_about .partners .list ul li img{
 	max-width: 65%;
     max-height: 65px;
-} 
+}
 .cavani_tm_about .partners .list ul li .list_inner{
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 	opacity: .5;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1274,7 +1274,7 @@ h6 { font-size: 16px; }
     color: #333;
     font-family: "Poppins";
     font-weight: 500;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1333,7 +1333,7 @@ h6 { font-size: 16px; }
 	z-index: 3;
 	padding: 15px;
 	transform: translateY(102%);
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1362,7 +1362,7 @@ h6 { font-size: 16px; }
 	background-color: rgba(0,0,0,.8);
 	opacity: 0;
 	visibility: hidden;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1386,7 +1386,7 @@ h6 { font-size: 16px; }
 	visibility: hidden;
 	margin-top: -20px;
 	transition-delay: .3s;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1414,7 +1414,7 @@ h6 { font-size: 16px; }
 	border:2px solid #fff;
 	border-radius: 10px;
 	position: relative;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1640,7 +1640,7 @@ h6 { font-size: 16px; }
 	border: 1px solid #b9b8c3;
 	padding: 70px 40px 63px;
 	text-align: center;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1655,7 +1655,7 @@ h6 { font-size: 16px; }
     height: 60px;
     color: #333;
 	margin-bottom: 27px;
-	
+
     -webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1670,7 +1670,7 @@ h6 { font-size: 16px; }
 	font-size: 24px;
 	color: #333;
 	margin-bottom: 15px;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1857,7 +1857,7 @@ h6 { font-size: 16px; }
 .cavani_tm_news .news_list > ul > li .extra_metas ul li span a{
 	text-decoration: none;
 	color: #777;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1904,7 +1904,7 @@ h6 { font-size: 16px; }
     visibility: hidden;
 	z-index: 1;
 	transform: scale(0.6);
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1997,7 +1997,7 @@ h6 { font-size: 16px; }
 .cavani_tm_modalbox .meta ul li span a{
 	text-decoration: none;
 	color: #777;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -2069,7 +2069,7 @@ h6 { font-size: 16px; }
 .cavani_tm_contact .short_info ul li .list_inner a{
 	text-decoration: none;
 	color: #7d7789;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -2128,7 +2128,7 @@ h6 { font-size: 16px; }
 .cavani_tm_contact .form .fields .last textarea:focus{
 	outline: none;
 	border: 1px solid rgba(0,0,0,.2);
-} 
+}
 .cavani_tm_contact .form .empty_notice{
 	color: #F52225;
 	margin-bottom: 7px;
@@ -2318,7 +2318,7 @@ h6 { font-size: 16px; }
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-image: url("..//img/about/3.jpg");
+	background-image: url("../img/profile.jpg");
 }
 
 /*---------------------------------------------------*/
