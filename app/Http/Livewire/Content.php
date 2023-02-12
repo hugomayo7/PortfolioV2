@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\About;
 use App\Models\Portfolio;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;

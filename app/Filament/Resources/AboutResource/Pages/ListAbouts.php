@@ -4,6 +4,7 @@ namespace App\Filament\Resources\AboutResource\Pages;
 
 use App\Filament\Resources\AboutResource;
 use App\Models\About;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Filament\Resources\Pages\ListRecords;
@@ -31,7 +32,12 @@ class ListAbouts extends EditRecord
     protected function getActions(): array
     {
         return [
-
+            Actions\Action::make('download')->action('downloadCV')->label('Télécharger le CV')
         ];
+    }
+
+    public function downloadCV()
+    {
+        $this->redirectRoute('download-cv');
     }
 }

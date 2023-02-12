@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\About;
 use App\Models\Portfolio;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Http\Livewire\Content::class)->name('home');
+
+Route::get('/download-cv', function () {
+    $abouts = About::first();
+    $pdf = Pdf::loadView('pdf.cv', compact('abouts'));
+    return $pdf->stream('CV-MAYONOBE-Hugo.pdf');
+
+//    $pdf = Pdf::loadView('pdf.cv', compact('abouts'))->outputHtml();
+//    return view('pdf.test', compact('pdf'));
+})->name('download-cv');
