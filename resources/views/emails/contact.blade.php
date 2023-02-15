@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>{{ $details['name'] }}</h1>
+<h4>{{ $details['mail'] }}</h4>
 <p>{{ $details['message'] }}</p>
 
 </body>
