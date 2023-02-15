@@ -25,7 +25,6 @@ jQuery(document).ready(function () {
     cavani_tm_data_images();
     cavani_tm_mycarousel();
     hashtag();
-    cavani_tm_ripple();
     cavani_tm_moving_box();
 
     cavani_tm_my_load();
@@ -498,16 +497,16 @@ $(".glitch").mgGlitch({
 // -------------  RIPPLE  --------------------------
 // -------------------------------------------------
 
-function cavani_tm_ripple() {
-
-    "use strict";
-
-    jQuery('#ripple').ripples({
-        resolution: 500,
-        dropRadius: 20,
-        perturbance: 0.04
-    });
-}
+// function cavani_tm_ripple() {
+//
+//     "use strict";
+//
+//     jQuery('#ripple').ripples({
+//         resolution: 500,
+//         dropRadius: 20,
+//         perturbance: 0.04
+//     });
+// }
 
 // -------------------------------------------------
 // -------------  MOVING BOX  ----------------------

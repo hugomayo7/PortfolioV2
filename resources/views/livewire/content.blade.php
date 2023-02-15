@@ -64,7 +64,7 @@
     <!-- /CONTENT -->
     <div class="cavani_tm_mainpart">
         <div class="author_image">
-            <div class="main ripple" id="ripple" ></div>
+            <div class="main ripple"></div>
         </div>
         <div class="main_content">
 
