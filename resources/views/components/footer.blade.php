@@ -1,7 +1,7 @@
 <!-- FOOTER -->
 <div class="cavani_tm_footer">
     <div class="copyright">
-        <p>Copyright &copy; 2023</p>
+        <p>Copyright &copy; {{ now()->year }}</p>
     </div>
     <div class="social">
         <ul>
